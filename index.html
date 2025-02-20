@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Organ Viewer</title>
+    <style>
+        body { 
+            margin: 0; 
+            display: flex; 
+            flex-direction: column; 
+            height: 100vh; 
+            font-family: Arial, sans-serif; 
+        }
+        .sketchfab-embed-wrapper { 
+            width: 100%; 
+            height: calc(100vh - 100px); /* Leave space for buttons */
+        }
+        iframe { 
+            width: 100%; 
+            height: 100%; 
+            border: none; 
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+            justify-content: center;
+            align-items: center;
+            height: 100px; /* Height for the button area */
+            background-color: #f0f0f0; /* Light background for buttons */
+            padding: 10px; /* Add some padding */
+        }
+        .button {
+            margin: 5px; /* Adjust margin for smaller screens */
+            padding: 10px 15px; /* Adjust padding */
+            font-size: 16px;
+            color: white;
+            background-color: #1CAAD9; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove underline from links */
+            flex: 1 1 100px; /* Allow buttons to grow and shrink */
+            max-width: 150px; /* Set a max width for buttons */
+        }
+        .button:hover {
+            background-color: #0f8cba; /* Darker shade on hover */
+        }
+        @media (max-width: 600px) {
+            .button {
+                font-size: 14px; /* Smaller font size for mobile */
+                padding: 8px 12px; /* Adjust padding for mobile */
+            }
+        }
+    </style>
+    <script>
+        function loadModel(model) {
+            const iframe = document.getElementById('model-iframe');
+            iframe.src = model;
+        }
+    </script>
+</head>
+<body>
+    <div class="sketchfab-embed-wrapper">
+        <iframe id="model-iframe" title="3d-vh-m-heart" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" src="https://sketchfab.com/models/382f831f53a54e989e8a58b740d54484/embed?autospin=1&autostart=1"></iframe>
+        <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+            <a href="https://sketchfab.com/3d-models/3d-vh-m-heart-382f831f53a54e989e8a58b740d54484?utm_medium=embed&utm_campaign=share-popup&utm_content=382f831f53a54e989e8a58b740d54484" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">3d-vh-m-heart</a> by 
+            <a href="https://sketchfab.com/tsa_webmaster?utm_medium=embed&utm_campaign=share-popup&utm_content=382f831f53a54e989e8a58b740d54484" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">randomdude107</a> on 
+            <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=382f831f53a54e989e8a58b740d54484" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+        </p>
+    </div>
+    <div class="button-container">
+        <a href="#" class="button" onclick="loadModel('https://sketchfab.com/models/382f831f53a54e989e8a58b740d54484/embed?autospin=1&autostart=1')">Heart</a>
+        <a href="#" class="button" onclick="loadModel('https://sketchfab.com/models/cfb701da5115460882653cd17a4c583e/embed?autospin=1&autostart=1')">Lungs</a>
+        <a href="#" class="button" onclick="loadModel('https://sketchfab.com/models/49dc41b6809748a086fda04917dd7092/embed?autostart=1')">Kidney</a>
+    </div>
+</body>
+</html>
